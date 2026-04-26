@@ -8,3 +8,11 @@ export const signupUser = async (
   const res = await api .post("/auth/signup", data);
   return res.data;
 };
+
+export const loginUser = async (data: {
+  email: string;
+  password: string;
+}): Promise<AuthResponse> => {
+  const res = await api.post("/auth/login", data);
+  return res.data;
+};
