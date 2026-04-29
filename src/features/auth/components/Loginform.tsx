@@ -26,11 +26,11 @@ export default function LoginForm() {
   const onSubmit = async (data: FormData) => {
     try {
       const res = await loginUser(data);
-      console.log(res);
+    //   console.log(res);
       setAuth(res);
       toast.success("Welcome back 🚀");
 
-    //   router.push("/dashboard");
+      router.replace("/dashboard");
     } catch (err: any) {
       toast.error(err?.response?.data?.message || "Login failed");
     }
